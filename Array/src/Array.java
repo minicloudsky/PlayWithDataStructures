@@ -101,7 +101,7 @@ public class Array<E> {
         // 释放引用
         data[size] = null; // loitering objects != memory leak
         // 所用长度为数组总长度1/4时间再缩容为1/2
-        if (size == data.length / 4 && data.length != 0) {
+        if (size == data.length / 4 && data.length / 2 != 0) {
             resize(data.length / 2);
         }
         return ret;
@@ -114,7 +114,7 @@ public class Array<E> {
 
     // 从数组中删除最后一个元素，返回删除的元素
     public E removeLast() {
-        return remove(size);
+        return remove(size - 1);
     }
 
     // 从数组中删除元素 e
@@ -139,6 +139,14 @@ public class Array<E> {
             throw new IllegalArgumentException("Set failed. Index Error.");
         }
         data[index] = e;
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size - 1);
     }
 
     @Override
