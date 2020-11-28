@@ -17,6 +17,8 @@ public class Student {
         arr.addLast(new Student("Alice", 12));
         arr.addLast(new Student("Bob", 55));
         arr.addLast(new Student("Charlie", 88));
+        arr.remove(0);
+        arr.addFirst(new Student("zhangsan", 34));
         System.out.println(arr);
     }
 }
